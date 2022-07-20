@@ -43,6 +43,7 @@ timeEl.innerHTML = `00:${value}` to the setTime (optimaise the code)
 35. Set the size for circle into createRandomCircle()
 36. Create function getRandomNumber() for getting size of the circle randomly
 37. Create const size and call to the getRandomNumber() into the createRandomCircle()
-38. 
+38. Create position randomly for the circle 
+const {width, height} = board.getBoundingClientRect()
 
 
