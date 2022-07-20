@@ -1,1 +1,30 @@
 # AIM-game
+1. Create .html and .css
+2. Create 3 screens in the .html
+3. Set the size of the screen height: 100vh;
+  width: 100vw;
+4. Set the style overflow: hidden; for hide the screen
+5. Add the animation in .css- the screen flies up
+.screen.up {
+  margin-top: -100vh;
+}
+and 
+transition: margin 0.5s ease-out;
+6. Create app.js
+7. Set id for the button Game start
+8. Create const startBtn
+9. Add event listener with removing # befor 'start'
+10. Create const screens
+11. Add class 'up' into array for display next screen
+12. Set id for the list of buttons in .html
+13. Create const for the timeList
+14. Add event listener for full list of buttons
+15. Create the const 'time'
+16. Put attribute of data-time into the const 'time' as a number
+17. Create function startGame()
+18. Create const timeEl for getting id of time
+19. Add timeEl into startGame()
+20. Add class up into the 1st and 2 screens .html
+21. Set time = 20 in app.js
+22. Move screens[1].classList.add('up') into the timeList() 
+
