@@ -1,9 +1,10 @@
 const startBtn = document.querySelector('#start')
 const screens = document.querySelectorAll('.screen')
 const timeList = document.querySelector('#time-list')
-let time = 20
+let time = 10
 const timeEl = document.querySelector('#time')
 const board = document.querySelector('#board')
+let score = 0
 
 startBtn.addEventListener('click', (event) => {
     event.preventDefault()
@@ -19,6 +20,16 @@ startBtn.addEventListener('click', (event) => {
         screens[1].classList.add('up')
         startGame()
     }
+    })
+
+    //click on the circle, not on the board
+    board.addEventListener('click', event => {
+        if (event.target.classList.contains('circle')) {
+            score++
+            event.target.remove() //delete circle
+            createRandomCircle()  //create new circle
+        }
+
     })
 
     //DEBUG
@@ -52,6 +63,8 @@ startBtn.addEventListener('click', (event) => {
     }
 
     function finishGame()  {
+        timeEl.parentNode.remove()
+        board.innerHTML = `<h1>Score: <span class="primary">${score}</span></h1>`
         
     }
 

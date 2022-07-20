@@ -45,5 +45,9 @@ timeEl.innerHTML = `00:${value}` to the setTime (optimaise the code)
 37. Create const size and call to the getRandomNumber() into the createRandomCircle()
 38. Create position randomly for the circle 
 const {width, height} = board.getBoundingClientRect()
+39. Create new event listener for the click on circle
+40. Set condition for the click on the circle, not on the board
+41. Add board.innerHTML into the finishGame()
+42. When the game is finished the time should be removed by timeEl.parentNode.remove() in the finishGame()
 
 
