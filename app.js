@@ -1,10 +1,10 @@
 const startBtn = document.querySelector('#start')
 const screens = document.querySelectorAll('.screen')
 const timeList = document.querySelector('#time-list')
-let time = 10
 const timeEl = document.querySelector('#time')
 const board = document.querySelector('#board')
 let score = 0
+let time = 0
 
 startBtn.addEventListener('click', (event) => {
     event.preventDefault()
@@ -15,10 +15,11 @@ startBtn.addEventListener('click', (event) => {
   timeList.addEventListener('click', event => {
     // event delegation
     if (event.target.classList.contains('time-btn')) {
-        time = parseInt(event.target.getAttribut('data-time'))
+        time = parseInt(event.target.getAttribute('data-time'))
         //change to the screen 2
         screens[1].classList.add('up')
         startGame()
+        
     }
     })
 
@@ -31,9 +32,6 @@ startBtn.addEventListener('click', (event) => {
         }
 
     })
-
-    //DEBUG
-    startGame()
 
     function startGame() {
         setInterval(decreaseTime, 1000)
@@ -63,6 +61,7 @@ startBtn.addEventListener('click', (event) => {
     }
 
     function finishGame()  {
+        //or timeEl.parentNode.classList.add('hide)
         timeEl.parentNode.remove()
         board.innerHTML = `<h1>Score: <span class="primary">${score}</span></h1>`
         
@@ -86,7 +85,7 @@ startBtn.addEventListener('click', (event) => {
        circle.style.width = `${size}px`
        circle.style.height = `${size}px`
        circle.style.top = `${y}px`
-       circle.style.top = `${x}px`
+       circle.style.left = `${x}px`
 
        board.append(circle)
     }
