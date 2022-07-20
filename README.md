@@ -49,5 +49,6 @@ const {width, height} = board.getBoundingClientRect()
 40. Set condition for the click on the circle, not on the board
 41. Add board.innerHTML into the finishGame()
 42. When the game is finished the time should be removed by timeEl.parentNode.remove() in the finishGame()
+43. Additions - add the button with '15 sec' and click on the circle change the color of it
 
 
