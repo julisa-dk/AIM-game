@@ -3,6 +3,7 @@ const screens = document.querySelectorAll('.screen')
 const timeList = document.querySelector('#time-list')
 let time = 20
 const timeEl = document.querySelector('#time')
+const board = document.querySelector('#board')
 
 startBtn.addEventListener('click', (event) => {
     event.preventDefault()
@@ -25,6 +26,8 @@ startBtn.addEventListener('click', (event) => {
 
     function startGame() {
         setInterval(decreaseTime, 1000)
+        //call to the method after start the game
+        createRandomCircle()
         //timeEl.innerHTML = `00:${time}`
         setTime(time)
     }
@@ -50,4 +53,22 @@ startBtn.addEventListener('click', (event) => {
 
     function finishGame()  {
         
+    }
+
+    function createRandomCircle()  {
+       const circle = document.createElement('div')
+       const size = getRandomNumber(10, 60)
+
+       circle.classList.add('circle')
+       //set the size for circle
+       /* circle.style.width = '15px'
+       circle.style.height = '15px' */
+       circle.style.width = `${size}px`
+       circle.style.height = `${size}px`
+
+       board.append(circle)
+    }
+
+    function getRandomNumber(min, max) {
+        return Math.round(Math.random() * (max - min) + min)
     }
