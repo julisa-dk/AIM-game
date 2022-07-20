@@ -3,8 +3,10 @@ const screens = document.querySelectorAll('.screen')
 const timeList = document.querySelector('#time-list')
 const timeEl = document.querySelector('#time')
 const board = document.querySelector('#board')
+const colors = ['#39f54c', '#f539b6', '#39d9f5', '#ffff00', '#ff0000', '#fff']
 let score = 0
 let time = 0
+let circleColor = 0
 
 startBtn.addEventListener('click', (event) => {
     event.preventDefault()
@@ -26,6 +28,8 @@ startBtn.addEventListener('click', (event) => {
     //click on the circle, not on the board
     board.addEventListener('click', event => {
         if (event.target.classList.contains('circle')) {
+            /* const color = getRandomColor(event.target)
+            element.style.background = color */
             score++
             event.target.remove() //delete circle
             createRandomCircle()  //create new circle
@@ -70,6 +74,10 @@ startBtn.addEventListener('click', (event) => {
     function createRandomCircle()  {
        const circle = document.createElement('div')
        const size = getRandomNumber(10, 60)
+
+       getRandomColor(circleColor)
+
+       //position of circle
        const {width, height} = board.getBoundingClientRect()
        //can get parameters of object - width and height
        /* const x = 150
@@ -86,6 +94,8 @@ startBtn.addEventListener('click', (event) => {
        circle.style.height = `${size}px`
        circle.style.top = `${y}px`
        circle.style.left = `${x}px`
+       circle.style.background = colors[circleColor]
+
 
        board.append(circle)
     }
@@ -93,3 +103,7 @@ startBtn.addEventListener('click', (event) => {
     function getRandomNumber(min, max) {
         return Math.round(Math.random() * (max - min) + min)
     }
+
+    function getRandomColor() {
+        return circleColor = Math.floor(Math.random() * colors.length)
+      }
