@@ -58,6 +58,13 @@ startBtn.addEventListener('click', (event) => {
     function createRandomCircle()  {
        const circle = document.createElement('div')
        const size = getRandomNumber(10, 60)
+       const {width, height} = board.getBoundingClientRect()
+       //can get parameters of object - width and height
+       /* const x = 150
+       const y = 200 */
+       //the circle doesn't go beyond the screen
+       const x = getRandomNumber(0, width - size)
+       const y = getRandomNumber(0, height - size)
 
        circle.classList.add('circle')
        //set the size for circle
@@ -65,6 +72,8 @@ startBtn.addEventListener('click', (event) => {
        circle.style.height = '15px' */
        circle.style.width = `${size}px`
        circle.style.height = `${size}px`
+       circle.style.top = `${y}px`
+       circle.style.top = `${x}px`
 
        board.append(circle)
     }
