@@ -26,5 +26,12 @@ transition: margin 0.5s ease-out;
 19. Add timeEl into startGame()
 20. Add class up into the 1st and 2 screens .html
 21. Set time = 20 in app.js
-22. Move screens[1].classList.add('up') into the timeList() 
+22. Move screens[1].classList.add('up') into the timeList()
+23. Start to work with timers - setInterval added into startGame()
+24. Create decreaseTime()
+25. Set the current time
+26. Create setTime() and replace 
+timeEl.innerHTML = `00:${value}` to the setTime (optimaise the code)
+27. Set the condition for the time into decreaseTime()
+28. Create the function finishGame()
 

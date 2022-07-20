@@ -24,5 +24,30 @@ startBtn.addEventListener('click', (event) => {
     startGame()
 
     function startGame() {
-        timeEl.innerHTML = `00:${time}`
+        setInterval(decreaseTime, 1000)
+        //timeEl.innerHTML = `00:${time}`
+        setTime(time)
+    }
+
+    function decreaseTime() {
+        //condition for the time
+        if (time === 0) {
+            finishGame()
+        } else {
+            let current = --time
+        //add '0' in the end of time for nice look
+        if (current < 10) {
+            current = `0${current}`
+        }   
+        //timeEl.innerHTML = `00:${current}`
+        setTime(current)
+        }   
+    }
+
+    function setTime(value) {
+        timeEl.innerHTML = `00:${value}`
+    }
+
+    function finishGame()  {
+        
     }
