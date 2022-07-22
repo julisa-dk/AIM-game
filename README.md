@@ -50,5 +50,5 @@ const {width, height} = board.getBoundingClientRect()
 41. Add board.innerHTML into the finishGame()
 42. When the game is finished the time should be removed by timeEl.parentNode.remove() in the finishGame()
 43. Additions - add the button with '15 sec' and click on the circle change the color of it
-
+44. Hack the game - kill max number of circles. Create winTheGame() and run it in the console befor start the game.
 

@@ -107,3 +107,15 @@ startBtn.addEventListener('click', (event) => {
     function getRandomColor() {
         return circleColor = Math.floor(Math.random() * colors.length)
       }
+
+    function winTheGame() {
+        function kill() {
+            const circle = document.querySelector('.circle')
+
+            if (circle) {
+                circle.click()
+            }
+        }
+
+        setInterval(kill, 42)
+    }
